@@ -1,0 +1,2 @@
+Generic test : unique, not null
+Singular test (Logical test or Alert): Test a specific business logic (Used inside the tests folder)

@@ -36,10 +36,16 @@ models:
       +materialized: view
     bronze:
       +materialized: table # other options: view, incremental, ephemeral (Configs are done in dbt_project, properties, block)
-      schema: bronze  # (Model folder level) this config, applied to all models under example/, overrides the default "public" schema
+      +schema: bronze  # (Model folder level) this config, applied to all models under example/, overrides the default "public" schema
     silver:
       +materialized: table
       schema: silver  # this config, applied to all models under example/, overrides the default "public" schema
     gold:
       +materialized: table
       schema: gold  # this config, applied to all models under example/, overrides the default "public" schema
+
+
+
+seeds: 
+  DBT_Proj_Demo:
+    +schema: bronze   # this config, applied to all seeds under seeds/, overrides the default "public" schema

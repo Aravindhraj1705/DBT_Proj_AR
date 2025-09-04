@@ -1,0 +1,3 @@
+Mapping table or Config file 
+
+Create CSV files - used to create mapping table in desired schema and catalog

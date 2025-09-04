@@ -1,0 +1,2 @@
+Query can be saevd only for developer or tester refernece maybe to execute and see results, 
+nowhere used in project
