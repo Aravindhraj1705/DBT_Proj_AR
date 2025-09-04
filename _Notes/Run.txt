@@ -1,0 +1,3 @@
+Node Selection : dbt run --select bronze_date
+(for multiple) : dbt run --select "bronze_date bronze store"
+(forlder wise) : dbt run --select "models/bronze/"
