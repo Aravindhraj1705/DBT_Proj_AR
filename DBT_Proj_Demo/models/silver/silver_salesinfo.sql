@@ -26,8 +26,10 @@ customers AS
             gender
       FROM 
             {{ ref("bronze_customers")}}
-)
+),
 
+joined_query as (
+      
 SELECT
       sales.sales_id,
       sales.gross_amount,
@@ -40,3 +42,16 @@ LEFT JOIN products
       ON sales.product_sk = products.product_sk
 LEFT JOIN customers
       ON sales.customer_sk = customers.customer_sk
+)
+
+SELECT 
+      category,
+      gender,
+      SUM(gross_amount) AS total_sales
+FROM 
+      joined_query
+GROUP BY
+      category,
+      gender
+ORDER BY
+      total_sales DESC;
